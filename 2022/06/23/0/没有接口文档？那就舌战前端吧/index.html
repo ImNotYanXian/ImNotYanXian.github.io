@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Xia Qian">
+  <meta name="keywords" content="知乎免费阅读网站,知乎搬运工,我不是盐仙网页入口,我不是盐仙网页入口在线阅读,我不是盐仙网页入口,免费盐选网站入口	盐仙阁知乎小说免费阅读网,知乎搬运工,我不是盐仙 知乎,严选,逼乎,严选小说,盐选文章,知乎小说,知乎盐选,知乎严选,资源,影视,合集,趣集">
+  
+    <meta name="description" content="12声明：这里讨论的接口文档应用场景是应用型的接口文档  接口文档是什么接口文档是一份约定，是一份供接口开发者与接口使用者共同遵守的约定。 接口，是对接的窗口的意思。接口就意味着约定，接口文档是对接口约定的说明书。 按照复用型分类，把所有接口都一样的内容都提练出来，专门写一份文档，叫 通用型接口文档，简称 通用文档。把每个接口都不一样的内容单独写的，叫 功能接口文档，简称 接口文档。 不写接口文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="没有接口文档？那就舌战前端吧">
+<meta property="og:url" content="http://xiaqian.xyz/2022/06/23/0/%E6%B2%A1%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9F%E9%82%A3%E5%B0%B1%E8%88%8C%E6%88%98%E5%89%8D%E7%AB%AF%E5%90%A7/">
+<meta property="og:site_name" content="我不是盐仙">
+<meta property="og:description" content="12声明：这里讨论的接口文档应用场景是应用型的接口文档  接口文档是什么接口文档是一份约定，是一份供接口开发者与接口使用者共同遵守的约定。 接口，是对接的窗口的意思。接口就意味着约定，接口文档是对接口约定的说明书。 按照复用型分类，把所有接口都一样的内容都提练出来，专门写一份文档，叫 通用型接口文档，简称 通用文档。把每个接口都不一样的内容单独写的，叫 功能接口文档，简称 接口文档。 不写接口文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-06T15:48:50.018Z">
+<meta property="article:author" content="Xia Qian">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>没有接口文档？那就舌战前端吧 - 我不是盐仙</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaqian.xyz","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":"21762263","cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":false};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21762263.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819637010385781" crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>我不是盐仙</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="没有接口文档？那就舌战前端吧"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">没有接口文档？那就舌战前端吧</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">声明：这里讨论的接口文档应用场景<br>是应用型的接口文档<br></code></pre></td></tr></table></figure>
+
+<h2 id="接口文档是什么"><a href="#接口文档是什么" class="headerlink" title="接口文档是什么"></a>接口文档是什么</h2><p>接口文档是一份约定，是一份供接口开发者与接口使用者共同遵守的约定。</p>
+<p>接口，是对接的窗口的意思。接口就意味着约定，接口文档是对接口约定的说明书。</p>
+<p>按照复用型分类，把所有接口都一样的内容都提练出来，专门写一份文档，叫 <code>通用型接口文档</code>，简称 <code>通用文档</code>。把每个接口都不一样的内容单独写的，叫 <code>功能接口文档</code>，简称 <code>接口文档</code>。</p>
+<h2 id="不写接口文档行不行"><a href="#不写接口文档行不行" class="headerlink" title="不写接口文档行不行"></a>不写接口文档行不行</h2><h3 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h3><p>我正沉浸在机械键盘的快感中，前端美眉过来了，“龙哥，上次你说的那个接口，有个时间字段，叫啥名字来着?”</p>
+<p>正中我下怀，终于来找我了，还是不写文档福利多呀。</p>
+<p>嗯，让我用16核钛金属CUP想想我当时咋说的。。。</p>
+<p>汗。。。没想起来，我再起一个。</p>
+<p>“叫 p_time “</p>
+<p>旁边的 ios 小哥一脸蒙逼的说：”不是 publish_time 吗？我都写完了。。。“ </p>
+<p>我擦，”对对对，想起来了，是 publish_time“。</p>
+<p>可能声音大了点，100m以外的 android 兄弟听到了，”毛线，昨天刚和我对的，叫 published_time，说的是发布时间吧”。</p>
+<p>这个可就不友好了，眼看着我在前端妹妹面前丢脸不是。</p>
+<p>“没事，都算数，我做兼容。。。”，正说着，主管过来就是一巴掌，“兼个毛线，写文档，下午茶一次”。</p>
+<p>“龙哥，我等你的文档哟！”前端美眉捂着嘴走了。</p>
+<h3 id="场景二"><a href="#场景二" class="headerlink" title="场景二"></a>场景二</h3><p>“龙哥，龙哥，你有 bug 啦“，测试美眉兴冲冲的过来，”你看，这里头像是空的，我刚问前端，他们打断点查了，是你没返回数据”</p>
+<p>“毛线，你可以质疑我的人品，但是怎么可以质疑我的代码？”。</p>
+<p>打开 postman，调起接口，“来，看看，有没有，有没有，拜托专业一点好不好”</p>
+<p>前端兄弟说话了：“不对呀，龙哥，我们按你说的取的 avatar 字段呀”</p>
+<p>什么鬼，我认识这个单词吗？“我明明说的头像叫 header_url 啊？”</p>
+<p>“不可能，你当时说的就是 avatar”，小子还很确定的说。</p>
+<p>“擦，给你看看我当时小本本上记得会议记录，看是不是 header_url”（我想不通，都写会议记录了，为啥不写文档）</p>
+<p>“嘿嘿嘿，那是我们写错了，咋办呀，都提测了，改起来好麻烦，你改下接口吧！”，前端小哥挠头了。 </p>
+<p>“凭什么我改，自己的屁股自己擦干净”，我以胜利者的姿态审判。</p>
+<p>主管听见这边吵吵，过来了，“几个端都取的是 avatar 吗？”</p>
+<p>前端们同声回答：“是”，</p>
+<p>“有文档吗？”</p>
+<p>“没有”，再次异口同声回答。</p>
+<p>“这个 bug 算你的，改接口，补文档，下午茶一次”，主管直接就下了结论。</p>
+<p>这是个阴谋。</p>
+<p>我发誓，以后啥也不干，也先把文档写出来。</p>
+<h3 id="场景三"><a href="#场景三" class="headerlink" title="场景三"></a>场景三</h3><p>欢迎大家回复补充。。。</p>
+<h3 id="你说不写接口文档行不行，你说！"><a href="#你说不写接口文档行不行，你说！" class="headerlink" title="你说不写接口文档行不行，你说！"></a>你说不写接口文档行不行，你说！</h3><h2 id="写接口文档的前提"><a href="#写接口文档的前提" class="headerlink" title="写接口文档的前提"></a>写接口文档的前提</h2><p>接口文档也不是我们想怎么写就怎么写，得根据需要来，怎么个根据需要？就是拿着需求文档与前端一起讨论交互方案。看实现这个需求需要怎么前后端交互，后端负责数据逻辑，前端负责展示逻辑。通过讨论交互文案，确定我们需要几个接口来实现功能，以及每个接口都要提供什么数据。</p>
+<h2 id="接口文档怎么写"><a href="#接口文档怎么写" class="headerlink" title="接口文档怎么写"></a>接口文档怎么写</h2><p>此处略去5000字。</p>
+<p>网上太多教程和范例，我就不重复造轮子了。只列出个提纲吧！</p>
+<h3 id="通用文档要素"><a href="#通用文档要素" class="headerlink" title="通用文档要素"></a>通用文档要素</h3><p><code>公共参数</code>, <code>接口格式示例</code>, <code>接口格式说明</code>, <code>成功返回示例</code>, <code>异常返回示例</code>, <code>接口环境配置说明</code>, <code>全局码对照说明</code>, <code>全局枚举类型说明</code></p>
+<p>总之，只要是接口共用的，都可以写在这里，减少 <code>接口文档</code> 的工作量。 </p>
+<h3 id="接口文档要素"><a href="#接口文档要素" class="headerlink" title="接口文档要素"></a>接口文档要素</h3><p> <code>名称</code>, <code>描述</code>, <code>接口uri</code>, <code>请求方式</code>, <code>权限说明</code>, <code>请求参数</code>, <code>正常返回示例</code>（异常在全局里已经写了，这里就不用写了）, <code>返回参数说明</code></p>
+<h2 id="常用的文档工具"><a href="#常用的文档工具" class="headerlink" title="常用的文档工具"></a>常用的文档工具</h2><p> <code>公司内部wiki平台</code>, <code>swagger</code>, <code>石墨文档</code>, <code>showdoc</code>, <code>apizza</code></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>—Thanks—</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Blog/" class="print-no-link">#Blog</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/23/0/%E6%88%91%E4%BB%AC%E8%A6%81%E4%B8%8D%E8%A6%81%E5%96%9D%E7%89%9B%E5%A5%B6%EF%BC%9F/" title="我们要不要喝牛奶？">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我们要不要喝牛奶？</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/23/0/%E8%8B%B9%E6%9E%9C%E6%94%AF%E4%BB%98%EF%BC%88Apple%20Pay%EF%BC%89%E5%92%8C%E8%8B%B9%E6%9E%9C%E5%86%85%E8%B4%AD%EF%BC%88IAP%EF%BC%89/" title="苹果支付（Apple Pay）和苹果内购（IAP）">
+                        <span class="hidden-mobile">苹果支付（Apple Pay）和苹果内购（IAP）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
